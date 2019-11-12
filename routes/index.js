@@ -45,7 +45,7 @@ router.post('/upload',upload.single('file'),function(req, res, next) {
     res.status(500);
     return next(err);
   }
-  res.json({ fileUrl: 'http://localhost:3000/images/' + req.file.filename });
+  res.json({ fileUrl: 'http://localhost:3000/images/' || 'https://api-meme.herokuapp.com:3000/images/' + req.file.filename });
 })
 
 module.exports = router;
